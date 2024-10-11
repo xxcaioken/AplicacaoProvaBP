@@ -1,3 +1,8 @@
+# Pull Request - Novas Funcionalidades
+
+Este pull request implementa novas funcionalidades conforme as necessidades identificadas. As principais melhorias foram organizadas em três etapas:
+
+---
 
 ## Etapa 1 - Clientes e Empréstimos
 
@@ -62,10 +67,8 @@ Além disso, houve um problema nos endpoints de criação e simulação de empr�
 2. **Gerar empréstimos com valores aleatórios**: `python manage.py gerar_emprestimos`
 3. **Gerar empréstimos prontos para aprovação**: `python manage.py gerar_somente_emprestimos_validos`
 4. **Criar novos clientes**: `python manage.py criar_clientes`
-5. **Gerar empréstimos com valores aleatórios**: `python manage.py gerar_emprestimos`
-6. **Gerar empréstimos prontos para aprovação**: `python manage.py gerar_somente_emprestimos_validos`
-7. **Aprovar empréstimos com juros acima de 4%**: `python manage.py aprovar_emprestimos`
-8. **Exportar dados para CSV**: `python manage.py exportar_dados_csv`
+5. **Aprovar empréstimos com juros acima de 4%**: `python manage.py aprovar_emprestimos`
+6. **Exportar dados para CSV**: `python manage.py exportar_dados_csv`
 
 ### 2. Extração de Dados
 
@@ -76,18 +79,25 @@ Além disso, houve um problema nos endpoints de criação e simulação de empr�
 
 As rotas para gerenciamento de produtos estão disponíveis via `apps.produtos.views.ProdutoViewSet`.
 
-| Ação                      | Método | URL                                          |
-|---------------------------|--------|----------------------------------------------|
-| Buscar todos os produtos  | GET    | `http://127.0.0.1:8080/api/v1/produtos/produtos` |
-| Criar um produto          | POST   | `http://127.0.0.1:8080/api/v1/produtos/produto/create` |
-| Atualizar um produto      | PUT    | `http://127.0.0.1:8080/api/v1/produtos/produto/update/<id>` |
-| Deletar um produto        | DELETE | `http://127.0.0.1:8080/api/v1/produtos/produto/delete/<id>` |
+| Ação                      | Método | URL                                           |
+|---------------------------|--------|-----------------------------------------------|
+| Buscar todos os produtos   | GET    | `http://127.0.0.1:8080/api/v1/produtos/produtos` |
+| Criar um produto           | POST   | `http://127.0.0.1:8080/api/v1/produtos/produto/create` |
+| Atualizar um produto       | PUT    | `http://127.0.0.1:8080/api/v1/produtos/produto/update/<id>` |
+| Deletar um produto         | DELETE | `http://127.0.0.1:8080/api/v1/produtos/produto/delete/<id>` |
 | Importar produtos de Saucedemo | GET | `http://127.0.0.1:8080/api/v1/produtos/produtos/importar` |
-| export todos produtos para um csv | GET | `http://127.0.0.1:8080/api/v1produtos/exportar-produtos-csv/` |
+| Exportar todos os produtos para um CSV | GET | `http://127.0.0.1:8080/api/v1/produtos/exportar-produtos-csv/` |
 
 Essas funcionalidades foram implementadas para melhorar o fluxo de desenvolvimento e permitir uma maior flexibilidade na manipulação dos dados.
-`{
+
+```json
+{
   "nome": "string",
   "descricao": "string",
   "preco": "string"
-} JSON template para produtos`
+}
+```
+JSON template para produtos
+
+### Observação:
+Os arquivos CSV de exportação gerados possuem a mesma estrutura, podendo variar apenas na ordem das colunas.
